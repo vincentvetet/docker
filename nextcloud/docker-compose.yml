@@ -1,0 +1,37 @@
+version: "3"
+services:
+  bitwarden:
+    image: vaultwarden/server:latest
+    container_name: bitwarden
+    volumes:
+      - /apps/bitwarden/data:/data
+    ports:
+      - 80:80
+      - 443:443
+      - 3012:3012
+    restart: always
+root@zeus:/docker# cat nextcloud/docker-compose.yml
+version: "3.5"
+services:
+  nextcloud:
+    image: linuxserver/nextcloud
+    container_name: nextcloud_app
+    env_file: .env
+    volumes:
+      - /apps/nextcloud/config:/config
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e:/data
+      - /apps/nextcloud/crontabs:/etc/crontabs
+    ports:
+      - 443:443
+    depends_on:
+      - mariadb
+    restart: always
+  mariadb:
+    image: linuxserver/mariadb
+    container_name: nextcloud_db
+    env_file: .env
+    volumes:
+      - /apps/nextcloud/mariadb:/config
+    restart: always
+    ports:
+      - 3306:3306

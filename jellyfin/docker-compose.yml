@@ -1,0 +1,21 @@
+version: "3.5"
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    volumes:
+      - /apps/jellyfin/config:/config
+      - /apps/jellyfin/cache:/cache
+      - /apps/jellyfin/media:/media
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Vincent/Film:/media/Film
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Vincent/Disney:/media/Disney
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Vincent/Manga:/media/Manga
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Vincent/Série:/media/Serie
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Vincent/Tutoriel:/media/Tutoreil
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Vincent/Emission:/media/Emission
+      - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Vincent/Spectacle:/media/Spectacle
+    restart: "always"
+    ports:
+      - "8096:8096"
+      - "7359:7359"
+      - "1900:1900"
