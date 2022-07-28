@@ -1,9 +1,33 @@
-<img src="http://wiki.vincentvetet.fr/docker.png">
+![Docker Logo](http://wiki.vincentvetet.fr/docker.png)
 
-Dans les fichiers docker-compose.yml:
+---
 
-- Changer les ports si besoin
+## Installation
 
-Dans les fichiers .env:
+Se rendre à la racine du serveur
 
-- Changer les valeurs où il y a marqué <span style="color: #008000"> **# à modifier** </span>
+```sh
+cd /
+```
+
+Récupérer les fichiers
+
+```sh
+git clone https://github.com/vincentvetet/docker.git
+```
+
+---
+
+## Configuration
+
+Changer les ports (si besoin) des fichiers docker-compose.yml
+
+```sh
+vi /docker/nextcloud/docker-compose.yml
+```
+
+Changer les valeurs où il y a marqué **# à modifier** dans les .env
+
+```sh
+vi /docker/nextcloud/.env
+```
