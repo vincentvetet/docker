@@ -2,7 +2,7 @@ version: "3.5"
 services:
   bitwarden:
     image: vaultwarden/server:latest
-    container_name: bitwarden
+    container_name: bitwarden_app
     volumes:
       - /apps/bitwarden/data:/data
     ports:

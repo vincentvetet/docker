@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+  pufferpanel:
+    image: pufferpanel/pufferpanel:latest
+    container_name: pufferpanel_app
+    ports:
+      - '8081:8080'
+      - '5657:5657'
+    restart: always
+    volumes:
+      - /apps/pufferpanel/apps:/etc/pufferpanel
+      - /apps/pufferpanel/servers:/var/lib/pufferpanel/servers
+      - /var/run/docker.sock:/var/run/docker.sock
