@@ -2,11 +2,11 @@ version: '3.5'
 services:
 
   portainer:
-    image: portainer/portainer-ce:latest
-    container_name: portainer_app
+    image: selfhostedpro/yacht:latest
+    container_name: yacht_app
     volumes:
-      - /apps/portainer/data:/data
+      - /apps/yacht/config:/config
       - /var/run/docker.sock:/var/run/docker.sock
     restart: always
     ports:
-      - 9000:9000
+      - 8000:8000

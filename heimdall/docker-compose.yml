@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+
+  heimdall:
+    image: linuxserver/heimdall:latest
+    container_name: heimdall_app
+    env_file: .env
+    volumes:
+      - /apps/heimdall:/config
+    restart: always
+    ports:
+      - 80:80
+      - 443:443

@@ -1,6 +1,6 @@
 version: '3.5'
-
 services:
+
    db:
      image: mysql:5.7
      container_name: wordpress_db

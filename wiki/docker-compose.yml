@@ -1,12 +1,15 @@
-version: "3.5"
-
+version: '3.5'
 services:
+
   db:
     image: postgres:11-alpine
     container_name: wiki_db
-    env_file: .env
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: Bi8UoqmVE@9yGwCWV4wRFY
+      POSTGRES_USER: wikijs
     logging:
-      driver: "none"
+      driver: none
     restart: always
     volumes:
       - /apps/wiki/db-data:/var/lib/postgresql/data
@@ -16,9 +19,15 @@ services:
     container_name: wiki_app
     depends_on:
       - db
-    env_file: .env
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: BDD_USER
+      DB_PASS: BDD_PASSWORD
+      DB_NAME: wiki
     restart: always
     ports:
-      - "3000:3000"
+      - 3000:3000
     volumes:
       - /apps/wiki/app-data:/wiki/data/content

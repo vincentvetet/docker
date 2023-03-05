@@ -1,12 +1,13 @@
-version: "3.5"
+version: '3.5'
 services:
+
   bitwarden:
     image: vaultwarden/server:latest
     container_name: bitwarden_app
     volumes:
       - /apps/bitwarden/data:/data
     ports:
-      - 80:80
+      - 880:80
       - 443:443
       - 3012:3012
     restart: always

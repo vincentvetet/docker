@@ -1,5 +1,6 @@
-version: "3.5"
+version: '3.5'
 services:
+
   jellyfin:
     image: jellyfin/jellyfin:latest
     container_name: jellyfin_app
@@ -15,8 +16,8 @@ services:
       - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Emission:/media/Emission
       - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Films:/media/Films
       - /srv/dev-disk-by-uuid-1513a24c-5462-4f1b-9712-7fb1ae5d8a2e/Samaf/files/Videos/Tutoriels:/media/Tutoriels
-    restart: "always"
+    restart: always
     ports:
-      - "8096:8096"
-      - "7359:7359"
-      - "1900:1900"
+      - 8096:8096
+      - 7359:7359
+      - 1900:1900
