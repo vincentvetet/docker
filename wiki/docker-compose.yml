@@ -6,8 +6,8 @@ services:
     container_name: wiki_db
     environment:
       POSTGRES_DB: wiki
-      POSTGRES_PASSWORD: Bi8UoqmVE@9yGwCWV4wRFY
-      POSTGRES_USER: wikijs
+      POSTGRES_PASSWORD: BDD_PASSWORD
+      POSTGRES_USER: BDD_USER
     logging:
       driver: none
     restart: always
