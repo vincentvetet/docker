@@ -6,8 +6,8 @@ services:
     container_name: qbittorrent_app
     env_file: .env
     volumes:
-      - /apps/qbitorrent:/config
-      - /apps/qbitorrent:/downloads
+      - /apps/qbitorrent/config:/config
+      - /apps/qbitorrent/downloads:/downloads
     ports:
       - 8080:8080
       - 6881:6881
